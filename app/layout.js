@@ -20,24 +20,23 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-50`}
-      >
-        <header className="border-b bg-white">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-50`}>
+        <header className="border-b bg-white sticky top-0 z-10">
           <div className="mx-auto max-w-6xl flex justify-between items-center p-4">
-            <h1 className="text-xl font-semibold">The Cozy Corner</h1>
-            <nav className="space-x-4 text-sm">
-              <Link href="/">Home</Link>
-              <Link href="/about">About</Link>
-              <Link href="/books">Books</Link>
-              <Link href="/contacts">Contact</Link>
+            <h1 className="text-xl font-bold text-zinc-800 tracking-tight">The Cozy Corner</h1>
+            <nav className="flex gap-6 text-sm font-medium text-zinc-400">
+              <Link href="/" className="hover:text-zinc-800 transition-colors">Home</Link>
+              <Link href="/about" className="hover:text-zinc-800 transition-colors">About</Link>
+              <Link href="/books" className="hover:text-zinc-800 transition-colors">Books</Link>
+              <Link href="/contacts" className="hover:text-zinc-800 transition-colors">Contact</Link>
             </nav>
           </div>
         </header>
 
-        <main className="mx-auto max-w-6xl p-6">{children}</main>
+        {/* Removed the max-w-6xl wrapper here so the page background fills the screen */}
+        {children}
 
-        <footer className="text-center text-sm text-zinc-500 py-6">
+        <footer className="text-center text-sm text-zinc-500 py-10">
           © 2026 The Cozy Corner
         </footer>
       </body>
